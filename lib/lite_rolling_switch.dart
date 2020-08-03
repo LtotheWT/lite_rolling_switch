@@ -36,6 +36,7 @@ class LiteRollingSwitch extends StatefulWidget {
   final Function onTap;
   final Function onDoubleTap;
   final Function onSwipe;
+  final double width;
 
   LiteRollingSwitch(
       {this.value = false,
@@ -50,7 +51,9 @@ class LiteRollingSwitch extends StatefulWidget {
       this.onTap,
       this.onDoubleTap,
       this.onSwipe,
-      this.onChanged});
+      this.onChanged,
+      this.width: 130
+      });
 
   @override
   _RollingSwitchState createState() => _RollingSwitchState();
@@ -109,7 +112,7 @@ class _RollingSwitchState extends State<LiteRollingSwitch>
       },
       child: Container(
         padding: EdgeInsets.all(5),
-        width: 130,
+        width: widget.width,
         decoration: BoxDecoration(
             color: transitionColor, borderRadius: BorderRadius.circular(50)),
         child: Stack(
