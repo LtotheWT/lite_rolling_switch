@@ -21,6 +21,7 @@ import 'dart:math';
 /// don't forget to set them.
 ///
 class LiteRollingSwitch extends StatefulWidget {
+  @required final Key key;
   @required
   final bool value;
   @required
@@ -41,6 +42,7 @@ class LiteRollingSwitch extends StatefulWidget {
 
   LiteRollingSwitch(
       {this.value = false,
+      this.key,
       this.textOff = "Off",
       this.textOn = "On",
       this.textSize = 14.0,
@@ -113,6 +115,7 @@ class _RollingSwitchState extends State<LiteRollingSwitch>
         //widget.onSwipe();
       },
       child: Container(
+        key: widget.key,
         padding: EdgeInsets.all(5),
         width: widget.width,
         decoration: BoxDecoration(
