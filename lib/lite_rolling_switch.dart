@@ -39,6 +39,7 @@ class LiteRollingSwitch extends StatefulWidget {
   final Function onSwipe;
   final double width;
   final double offset;
+  final double height;
 
   LiteRollingSwitch(
       {this.value = false,
@@ -57,6 +58,7 @@ class LiteRollingSwitch extends StatefulWidget {
       this.onChanged,
       this.width =  130,
         this.offset = 80,
+        this.height = 40,
       });
 
   @override
@@ -129,7 +131,7 @@ class _RollingSwitchState extends State<LiteRollingSwitch>
                 child: Container(
                   padding: EdgeInsets.only(right: 10),
                   alignment: Alignment.centerRight,
-                  height: 40,
+                  height: widget.height,
                   child: Text(
                     widget.textOff,
                     style: TextStyle(
@@ -147,7 +149,7 @@ class _RollingSwitchState extends State<LiteRollingSwitch>
                 child: Container(
                   padding: EdgeInsets.only(/*top: 10,*/ left: 5),
                   alignment: Alignment.centerLeft,
-                  height: 40,
+                  height: widget.height,
                   child: Text(
                     widget.textOn,
                     style: TextStyle(
@@ -163,7 +165,7 @@ class _RollingSwitchState extends State<LiteRollingSwitch>
               child: Transform.rotate(
                 angle: lerpDouble(0, 2 * pi, value),
                 child: Container(
-                  height: 40,
+                  height: widget.height,
                   width: 40,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
