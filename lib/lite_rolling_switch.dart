@@ -34,7 +34,7 @@ class LiteRollingSwitch extends StatefulWidget {
   final Duration animationDuration;
   final IconData iconOn;
   final IconData iconOff;
-  final Function onTap;
+  final Function(Function) onTap;
   final Function onDoubleTap;
   final Function onSwipe;
   final double width;
@@ -104,15 +104,15 @@ class _RollingSwitchState extends State<LiteRollingSwitch>
 
     return GestureDetector(
       onDoubleTap: () {
-        _action();
+        // _action();
         if (widget.onDoubleTap != null) widget.onDoubleTap();
       },
       onTap: () {
-        _action();
-        if (widget.onTap != null) widget.onTap();
+        // _action();
+        if (widget.onTap != null) widget.onTap(_action);
       },
       onPanEnd: (details) {
-        _action();
+        // _action();
         if (widget.onSwipe != null) widget.onSwipe();
         //widget.onSwipe();
       },
